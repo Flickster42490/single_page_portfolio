@@ -847,32 +847,8 @@ footer .social-list .social--instagram:after {
     border-left: 6px solid #7e97ef;
 }
 
-.state--present {
-    background: #85efdd;
-}
-
-.state--present .link-underline {
-    color: #efef83;
-}
-
-.state--present .link-underline:before {
-    background-color: #efef83;
-}
-
-.state--present .btn--arrow {
-    color: #7e97ef;
-}
-
-.state--present .btn--arrow:after {
-    background-color: #7e97ef;
-}
-
-.state--present .btn--arrow:before {
-    border-left: 6px solid #7e97ef;
-}
-
 .state--future {
-    background: #7e97ef;
+    background: #85efdd;
 }
 
 .state--future .link-underline {
@@ -884,14 +860,38 @@ footer .social-list .social--instagram:after {
 }
 
 .state--future .btn--arrow {
-    color: #85efdd;
+    color: #7e97ef;
 }
 
 .state--future .btn--arrow:after {
-    background-color: #85efdd;
+    background-color: #7e97ef;
 }
 
 .state--future .btn--arrow:before {
+    border-left: 6px solid #7e97ef;
+}
+
+.state--present {
+    background: #7e97ef;
+}
+
+.state--present .link-underline {
+    color: #efef83;
+}
+
+.state--present .link-underline:before {
+    background-color: #efef83;
+}
+
+.state--present .btn--arrow {
+    color: #85efdd;
+}
+
+.state--present .btn--arrow:after {
+    background-color: #85efdd;
+}
+
+.state--present .btn--arrow:before {
     border-left: 6px solid #85efdd;
 }
 
@@ -1286,4 +1286,10 @@ footer .social-list .social--instagram:after {
 
 .clearfix {
     *zoom: 1;
+}
+
+#gif-label {
+    opacity: 1;
+    float: right;
+    margin-top: 50px;
 }
