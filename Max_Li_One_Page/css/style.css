@@ -1,0 +1,1289 @@
+/* --- $VARIABLES --- */
+
+
+/* --- RESET ---*/
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* --- FONTS --- */
+
+@font-face {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+/* --- GLOBALS --- */
+
+
+/**
+ * Body
+ */
+
+html {
+    min-height: 100%;
+}
+
+body {
+    font: 62.5%/1.55 'Wigrum', sans-serif;
+    /* 62.5% equals 10 px; used as a baseline for REM unit */
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    font-size: 10px;
+    font-size: 1rem;
+}
+
+
+/**
+ * Wrapper
+ */
+
+.wrapper {
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+    background-color: #fff;
+    padding: 60px;
+}
+
+
+/**
+ * Links
+ */
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: #394f5b;
+    outline: none;
+    -webkit-transition: all 0.1s ease-in-out 0s;
+    -moz-transition: all 0.1s ease-in-out 0s;
+    transition: all 0.1s ease-in-out 0s;
+}
+
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: #394f5b;
+    outline: none;
+}
+
+a.link-underline {
+    position: relative;
+}
+
+a.link-underline:before {
+    position: absolute;
+    bottom: 0;
+    bottom: 2px;
+    left: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 2px;
+    content: '';
+    background-color: #394f5b;
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+a.link-underline:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+
+/**
+ * User selection
+ */
+
+::-moz-selection {
+    color: #394f5b;
+    background: #fff;
+}
+
+::selection {
+    color: #394f5b;
+    background: #fff;
+}
+
+
+/**
+ * Animated class
+ */
+
+.animated {
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+    -o-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.animated.hinge {
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+
+/**
+ * Common class
+ */
+
+.hide {
+    display: none !important;
+}
+
+.relative {
+    position: relative;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.strong {
+    font-weight: 500;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.min-height-100 {
+    height: 100%;
+    min-height: 100% !important;
+}
+
+.txt-white {
+    color: #fff;
+}
+
+
+/* --- TYPOGRAPHY --- */
+
+
+/**
+ * Titles
+ */
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    font-family: "Avenir", sans-serif;
+    color: #fff;
+}
+
+h1,
+.h1 {
+    font-size: 58px;
+    font-size: 5.8rem;
+    line-height: 70px;
+    line-height: 7rem;
+}
+
+h2,
+.h2 {
+    font-family: "Avenir", sans-serif;
+    font-size: 60px;
+    font-size: 6rem;
+    line-height: 68px;
+    line-height: 6.8rem;
+}
+
+@media only screen and (max-width: 992px) {
+    h2,
+    .h2 {
+        font-size: 47px;
+        font-size: 4.7rem;
+        line-height: 54px;
+        line-height: 5.4rem;
+    }
+}
+
+h3,
+.h3 {
+    font-size: 18px;
+    font-size: 1.8rem;
+    line-height: 28px;
+    line-height: 2.8rem;
+}
+
+h4,
+.h4 {
+    font-size: 10px;
+    font-size: 1rem;
+    line-height: 14px;
+    line-height: 1.4rem;
+}
+
+
+/**
+ * Paragraph
+ */
+
+p {
+    font-family: "Avenir", sans-serif;
+    color: #394f5b;
+    font-size: 22px;
+    font-size: 2.2rem;
+    line-height: 32px;
+    line-height: 3.2rem;
+}
+
+p.big-paragraph {
+    font-family: "Avenir", sans-serif;
+    font-size: 35px;
+    font-size: 3.5rem;
+    letter-spacing: 0.5px;
+    line-height: 50px;
+    line-height: 5rem;
+}
+
+@media only screen and (max-width: 992px) {
+    p.big-paragraph {
+        font-size: 30px;
+        font-size: 3rem;
+        line-height: 42px;
+        line-height: 4.2rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    p.big-paragraph {
+        margin-top: 30px;
+    }
+}
+
+
+/* --- Header --- */
+
+header {
+    text-align: center;
+}
+
+header .travel {
+    display: block;
+    overflow: hidden;
+    width: 300px;
+    height: 200px;
+    padding: 0;
+    position: absolute;
+    top: -40px;
+    left: -140px;
+    white-space: nowrap;
+    text-indent: 100%;
+}
+
+@media only screen and (min-width: 1201px) {
+    header .travel {
+        left: -200px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    header .travel {
+        left: -140px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    header .travel {
+        left: -36px;
+        margin: 35px auto;
+    }
+}
+
+header .travel svg {
+    position: absolute;
+    left: 0;
+}
+
+
+/* --- Footer --- */
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 25px;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 57px;
+}
+
+footer p {
+    color: #394f5b;
+    position: absolute;
+    left: 80px;
+    top: 15px;
+    font-size: 12px;
+    font-size: 1.2rem;
+}
+
+footer p .coding a {
+    color: #394f5b;
+}
+
+footer p .coding a:hover,
+footer p .coding a:focus {
+    color: #fff;
+}
+
+@media only screen and (min-width: 1201px) {
+    footer p .coding {
+        margin-left: 50px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    footer p .coding {
+        margin-left: 30px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    footer p .coding {
+        display: block;
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    footer p .coding {
+        display: block;
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    footer p {
+        width: 100%;
+        float: right;
+        position: relative;
+        text-align: center;
+        left: 0;
+        margin-top: 60px;
+        line-height: 28px;
+        line-height: 2.8rem;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    footer p {
+        width: 100%;
+        float: right;
+        position: relative;
+        text-align: center;
+        left: 0;
+        margin-top: 60px;
+        line-height: 28px;
+        line-height: 2.8rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    footer {
+        height: 170px;
+        position: static;
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    footer {
+        height: 170px;
+        position: static;
+        margin-top: 30px;
+    }
+}
+
+footer .social-list {
+    position: absolute;
+    right: 40px;
+    list-style: none;
+    text-align: center;
+}
+
+@media only screen and (max-width: 992px) {
+    footer .social-list {
+        right: 30px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    footer .social-list {
+        float: left;
+        width: 100%;
+        right: 0;
+        z-index: 10;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    footer .social-list {
+        float: left;
+        width: 100%;
+        right: 0;
+        z-index: 10;
+    }
+}
+
+footer .social-list .social {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+@media only screen and (min-width: 1201px) {
+    footer .social-list .social {
+        margin: 0 10px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    footer .social-list .social {
+        margin: 0 10px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    footer .social-list .social {
+        margin: 0 10px;
+    }
+}
+
+footer .social-list .social .social-link {
+    position: absolute;
+    z-index: 10;
+    display: block;
+    overflow: hidden;
+    width: 52px;
+    height: 52px;
+    white-space: nowrap;
+    text-indent: 100%;
+    border-radius: 52px;
+    margin-top: 4px;
+}
+
+footer .social-list .social span {
+    position: relative;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 23px;
+    height: 23px;
+    margin-top: -15px;
+    margin-left: -11px;
+}
+
+footer .social-list .social span:after {
+    position: absolute;
+    z-index: 12;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 23px;
+    height: 23px;
+    content: '';
+    opacity: 0;
+    background-image: url("../img/sprite_social_icon.png");
+    background-repeat: no-repeat;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+@media (min--moz-device-pixel-ratio: 1.3),
+(-o-min-device-pixel-ratio: 2.6 / 2),
+(-webkit-min-device-pixel-ratio: 1.3),
+(min-device-pixel-ratio: 1.3),
+(min-resolution: 1.3dppx) {
+    footer .social-list .social span:after {
+        /* on retina, use image that's scaled by 2 */
+        background-image: url("../img/sprite_social_icon@2x.png");
+        background-size: 115px 46px;
+    }
+}
+
+footer .social-list .social span:before {
+    position: absolute;
+    z-index: 11;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 23px;
+    height: 23px;
+    content: '';
+    background-image: url("../img/sprite_social_icon.png");
+    background-repeat: no-repeat;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+@media (min--moz-device-pixel-ratio: 1.3),
+(-o-min-device-pixel-ratio: 2.6 / 2),
+(-webkit-min-device-pixel-ratio: 1.3),
+(min-device-pixel-ratio: 1.3),
+(min-resolution: 1.3dppx) {
+    footer .social-list .social span:before {
+        /* on retina, use image that's scaled by 2 */
+        background-image: url("../img/sprite_social_icon@2x.png");
+        background-size: 115px 46px;
+    }
+}
+
+footer .social-list .social:after {
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 52px;
+    height: 52px;
+    content: '';
+    opacity: 0;
+    border: 2px solid black;
+    border-radius: 50px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+footer .social-list .social:hover span:after {
+    opacity: 1;
+}
+
+footer .social-list .social:hover span:before {
+    opacity: 0;
+}
+
+footer .social-list .social:hover:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+
+footer .social-list .social--behance span:after {
+    background-position: 0 0;
+}
+
+footer .social-list .social--behance span:before {
+    background-position: 0 -23px;
+}
+
+footer .social-list .social--behance:after {
+    border-color: #1a237e;
+}
+
+footer .social-list .social--dribbble span:after {
+    background-position: -23px 0;
+}
+
+footer .social-list .social--dribbble span:before {
+    background-position: -23px -23px;
+}
+
+footer .social-list .social--dribbble:after {
+    border-color: #f06292;
+}
+
+footer .social-list .social--twitter span:after {
+    background-position: -46px 0;
+}
+
+footer .social-list .social--twitter span:before {
+    background-position: -46px -23px;
+}
+
+footer .social-list .social--twitter:after {
+    border-color: #00b0ff;
+}
+
+footer .social-list .social--linkedin span:after {
+    background-position: -69px 0;
+}
+
+footer .social-list .social--linkedin span:before {
+    background-position: -69px -23px;
+}
+
+footer .social-list .social--linkedin:after {
+    border-color: #135bad;
+}
+
+footer .social-list .social--instagram span:after {
+    background-position: -92px 0;
+}
+
+footer .social-list .social--instagram span:before {
+    background-position: -92px -23px;
+}
+
+footer .social-list .social--instagram:after {
+    border-color: #131a1e;
+}
+
+
+/* --- BUTTONS --- */
+
+.btn {
+    font-family: "Avenir", sans-serif;
+    position: relative;
+    display: inline-block;
+    padding: 0 0 0 40px;
+    border-radius: 0;
+    background-color: transparent;
+    font-size: 35px;
+    font-size: 3.5rem;
+    letter-spacing: 0.5px;
+    line-height: 10px;
+    line-height: 1rem;
+    vertical-align: inherit;
+    -webkit-transition: all 1s ease-in-out 0s;
+    -moz-transition: all 1s ease-in-out 0s;
+    transition: all 1s ease-in-out 0s;
+}
+
+.btn--arrow:after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    left: 0;
+    top: 50%;
+    margin-top: 3px;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.btn--arrow:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 24px;
+    top: 50%;
+    margin-top: -2px;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    -moz-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.btn:hover:after {
+    width: 100%;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.btn:hover:before {
+    width: 100%;
+    left: 100%;
+    border-left: 0 solid transparent !important;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.btn-explore {
+    position: absolute;
+    top: 50px;
+    right: 70px;
+    display: block;
+    color: #394f5b;
+    font-family: "Avenir", sans-serif;
+    z-index: 10;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    opacity: .5;
+    background: url("../img/icn_compass_hover.png") no-repeat right center;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (min--moz-device-pixel-ratio: 1.3),
+(-o-min-device-pixel-ratio: 2.6 / 2),
+(-webkit-min-device-pixel-ratio: 1.3),
+(min-device-pixel-ratio: 1.3),
+(min-resolution: 1.3dppx) {
+    .btn-explore {
+        /* on retina, use image that's scaled by 2 */
+        background-image: url("../img/icn_compass_hover@2x.png");
+        background-size: 50px 50px;
+    }
+}
+
+.btn-explore span {
+    font-size: 16px;
+    font-size: 1.6rem;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    margin-top: -12px;
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-explore:hover {
+    opacity: 1;
+    color: #394f5b;
+}
+
+.btn-explore:hover span {
+    opacity: 1;
+    right: 60px;
+}
+
+@media only screen and (max-width: 992px) {
+    .btn-explore {
+        top: 30px;
+        right: 30px;
+    }
+}
+
+
+/* --- BACKGROUND COLORS --- */
+
+.state {
+    -webkit-transition: all 2s ease-in-out 0s;
+    -moz-transition: all 2s ease-in-out 0s;
+    transition: all 2s ease-in-out 0s;
+}
+
+.state--past {
+    background: #efef83;
+}
+
+.state--past .link-underline {
+    color: #86f0de;
+}
+
+.state--past .link-underline:before {
+    background-color: #86f0de;
+}
+
+.state--past .btn--arrow {
+    color: #7e97ef;
+}
+
+.state--past .btn--arrow:after {
+    background-color: #7e97ef;
+}
+
+.state--past .btn--arrow:before {
+    border-left: 6px solid #7e97ef;
+}
+
+.state--present {
+    background: #85efdd;
+}
+
+.state--present .link-underline {
+    color: #efef83;
+}
+
+.state--present .link-underline:before {
+    background-color: #efef83;
+}
+
+.state--present .btn--arrow {
+    color: #7e97ef;
+}
+
+.state--present .btn--arrow:after {
+    background-color: #7e97ef;
+}
+
+.state--present .btn--arrow:before {
+    border-left: 6px solid #7e97ef;
+}
+
+.state--future {
+    background: #7e97ef;
+}
+
+.state--future .link-underline {
+    color: #efef83;
+}
+
+.state--future .link-underline:before {
+    background-color: #efef83;
+}
+
+.state--future .btn--arrow {
+    color: #85efdd;
+}
+
+.state--future .btn--arrow:after {
+    background-color: #85efdd;
+}
+
+.state--future .btn--arrow:before {
+    border-left: 6px solid #85efdd;
+}
+
+
+/* --- Homepage --- */
+
+#content {
+    position: absolute;
+    top: 50%;
+    left: 170px;
+    width: 700px;
+    padding-top: 200px;
+    z-index: 2;
+    margin-top: -50px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@media only screen and (min-width: 1201px) {
+    #content {
+        left: 250px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    #content {
+        width: 100%;
+        left: 30px;
+        padding-right: 60px;
+        margin-top: -70px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #content {
+        position: static;
+        margin-top: 40px;
+        -webkit-transform: translateY(0%);
+        -moz-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+        -o-transform: translateY(0%);
+        transform: translateY(0%);
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+}
+
+@-webkit-keyframes rotating {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes rotating {
+    0% {
+        -moz-transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@keyframes rotating {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.preloader {
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.preloader .spinner {
+    background: url("../img/icn_compass_hover.png") no-repeat center center;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+    display: block;
+    position: absolute;
+    -webkit-animation: rotating 4s linear infinite;
+    -moz-animation: rotating 4s linear infinite;
+    animation: rotating 4s linear infinite;
+}
+
+@media (min--moz-device-pixel-ratio: 1.3),
+(-o-min-device-pixel-ratio: 2.6 / 2),
+(-webkit-min-device-pixel-ratio: 1.3),
+(min-device-pixel-ratio: 1.3),
+(min-resolution: 1.3dppx) {
+    .preloader .spinner {
+        /* on retina, use image that's scaled by 2 */
+        background-image: url("../img/icn_compass_hover@2x.png");
+        background-size: 50px 50px;
+    }
+}
+
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #3498db;
+    -webkit-animation: spin 2s linear infinite;
+    /* Chrome, Opera 15+, Safari 5+ */
+    animation: spin 2s linear infinite;
+    /* Chrome, Firefox 16+, IE 10+, Opera */
+    z-index: 1001;
+    background: url("../img/icn_compass_hover.png") no-repeat center center;
+}
+
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #e74c3c;
+    -webkit-animation: spin 3s linear infinite;
+    /* Chrome, Opera 15+, Safari 5+ */
+    animation: spin 3s linear infinite;
+    /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #f9c922;
+    -webkit-animation: spin 1.5s linear infinite;
+    /* Chrome, Opera 15+, Safari 5+ */
+    animation: spin 1.5s linear infinite;
+    /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+#loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: #fff;
+    z-index: 1000;
+}
+
+#loader-wrapper .loader-section.section-left {
+    left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+    right: 0;
+}
+
+
+/* Loaded */
+
+.loaded #loader-wrapper .loader-section.section-left {
+    -webkit-transform: translateX(-100%);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(-100%);
+    /* IE 9 */
+    transform: translateX(-100%);
+    /* Firefox 16+, IE 10+, Opera */
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+    -webkit-transform: translateX(100%);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(100%);
+    /* IE 9 */
+    transform: translateX(100%);
+    /* Firefox 16+, IE 10+, Opera */
+}
+
+.loaded #loader-wrapper .loader-section.section-right,
+.loaded #loader-wrapper .loader-section.section-left {
+    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.loaded #loader {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.loaded #loader-wrapper {
+    visibility: hidden;
+}
+
+.loaded #loader-wrapper {
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+    -webkit-transition: all 0.3s 1s ease-out;
+    transition: all 0.3s 1s ease-out;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);
+        /* IE 9 */
+        transform: rotate(0deg);
+        /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);
+        /* IE 9 */
+        transform: rotate(360deg);
+        /* Firefox 16+, IE 10+, Opera */
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);
+        /* IE 9 */
+        transform: rotate(0deg);
+        /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);
+        /* IE 9 */
+        transform: rotate(360deg);
+        /* Firefox 16+, IE 10+, Opera */
+    }
+}
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
