@@ -169,6 +169,10 @@ a.link-underline:hover:before {
  * Common class
  */
 
+ .flex-container { 
+     display: flex;
+ }
+
 .hide {
     display: none !important;
 }
@@ -204,6 +208,10 @@ a.link-underline:hover:before {
 
 .txt-white {
     color: #fff;
+}
+
+.txt-yellow {
+    color: #f0ef8a;
 }
 
 
@@ -289,17 +297,13 @@ p {
 
 p.big-paragraph {
     font-family: "Avenir", sans-serif;
-    font-size: 35px;
-    font-size: 3.5rem;
+    font-size: 20px;
     letter-spacing: 0.5px;
-    line-height: 50px;
-    line-height: 5rem;
 }
 
 @media only screen and (max-width: 992px) {
     p.big-paragraph {
-        font-size: 30px;
-        font-size: 3rem;
+        font-size: 20px;
         line-height: 42px;
         line-height: 4.2rem;
     }
@@ -308,6 +312,7 @@ p.big-paragraph {
 @media only screen and (max-width: 768px) {
     p.big-paragraph {
         margin-top: 30px;
+        font-size: 24px;
     }
 }
 
@@ -339,7 +344,7 @@ header .travel {
 
 @media only screen and (max-width: 992px) {
     header .travel {
-        left: -140px;
+        left: -50px;
     }
 }
 
@@ -900,9 +905,8 @@ footer .social-list .social--instagram:after {
 
 #content {
     position: absolute;
-    top: 50%;
-    left: 170px;
-    width: 700px;
+    top: 40%;    
+    width: 1000px;
     padding-top: 200px;
     z-index: 2;
     margin-top: -50px;
@@ -916,6 +920,9 @@ footer .social-list .social--instagram:after {
 @media only screen and (min-width: 1201px) {
     #content {
         left: 250px;
+    }
+    .big-paragraph {
+        margin-left: -120px;
     }
 }
 
@@ -1292,4 +1299,16 @@ footer .social-list .social--instagram:after {
     opacity: 1;
     float: right;
     margin-top: 50px;
+}
+
+#change-time {
+    z-index: 100000;
+}
+
+.nav {
+    font-size: 15px;
+}
+ul#nav li a:hover {
+    background-color: transparent;
+    color: #F06000;
 }
